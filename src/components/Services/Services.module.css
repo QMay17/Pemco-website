@@ -1,0 +1,119 @@
+.services {
+    padding: 8rem 0;
+    background-color: var(--color-bg-light);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+    /* Center text needs inline-block for after element to be relative to text if centered? About is left aligned. Services header is text-align: center (line 7). */
+}
+
+/* About title uses ::after for the line. */
+.title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--color-secondary);
+    margin: 0.5rem auto 0;
+    /* Centered line */
+    border-radius: 2px;
+}
+
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* Wide columns */
+    gap: 3rem;
+}
+
+.categoryCard {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 4px;
+    /* Slight radius */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    border: 1px solid #eee;
+}
+
+.categoryTitle {
+    font-size: 1.5rem;
+    color: var(--color-text-main);
+    margin-bottom: 2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid var(--color-text-main);
+    /* Thicker line */
+    font-weight: 800;
+    /* Bolder */
+    letter-spacing: 0.5px;
+}
+
+.subCategory {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    /* Dark Blue */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.serviceList {
+    list-style: none;
+    padding: 0;
+}
+
+.serviceList li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.serviceList li::before {
+    content: "•";
+    /* Bullet point */
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    /* Red bullet */
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .categoryGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* Force white theme even in dark mode preference as per request */
+    .services {
+        background-color: var(--color-white);
+    }
+
+    .categoryCard {
+        background: var(--color-white);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #eee;
+        /* Add border for visibility since everything is white */
+    }
+
+    .categoryTitle {
+        color: var(--color-text-main);
+        border-bottom: 2px solid var(--color-text-main);
+    }
+}

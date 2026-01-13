@@ -1,0 +1,69 @@
+.footer {
+    background-color: var(--color-primary);
+    /* Dark Blue */
+    color: var(--color-white);
+    padding: 2rem 0;
+    /* Reduced padding to match reference which is compact */
+    border-top: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.myanmar {
+    color: var(--color-secondary);
+}
+
+.copyright {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.column h4 {
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.links li {
+    margin-bottom: 0.8rem;
+}
+
+.links a,
+.link {
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.links a:hover,
+.link:hover {
+    color: var(--color-white);
+}
+
+.link {
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
